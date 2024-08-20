@@ -1,0 +1,323 @@
+@import url('../color.css');
+.hero{
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.info{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+
+}
+
+@property --angle{
+        syntax:"<angle>";
+        initial-value: 0deg;
+        inherits: false;
+}
+.gp{
+    width: 100%;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    [alt="photo"]{
+        width: 256px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px var(--clr-praimary);
+        animation: move 3s ease-out 1;
+        animation: light 3s linear infinite;
+        translate: 0px 0;
+        overflow: hidden;
+    }
+    .photo{
+        background: transparent;
+        padding: 2em;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: relative;
+    }
+    
+    .photo::after, .photo::before{
+    
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: conic-gradient(from var(--angle) , transparent 70%  , var(--clr-praimary));
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        padding: 3px;
+        border-radius: 50%;
+        animation: line 3s linear infinite;
+    }
+    .photo::before{
+        content: "";
+        filter: blur(1.5rem);
+        opacity: 0.7;
+    }
+   
+
+}
+.line{
+    width: 1px;
+    height: 40%;
+    backdrop-filter: blur(1.5rem);
+    background: #00ff6e82;
+    box-shadow: 0 0 2px rgb(255, 255, 255);
+    border-radius: 5px 0 5px 0 0 5px 0 5px;
+    position: relative;
+}
+.line::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: var(--clr-praimary);
+    box-shadow: 0 0 5px #00ff6e82;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: dote 3s ease-in-out infinite;
+}
+
+@keyframes dote {
+    0%{
+        top: 0%;
+    }
+    50%{
+        top: 100%;
+    }
+    
+    100%{
+        top: 0%;
+    }
+}
+@keyframes line {
+        from{
+            --angle: 0deg;
+
+        }
+        to{
+            --angle: 360deg;
+     
+        }
+        
+    }
+
+[alt="mk"]{
+    width: 200px;
+
+}
+
+.social-media{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+.social-media .icons-all{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    box-shadow: 0px 0px 5px var(--clr-praimary);
+    border: 25px white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    float: left;
+    overflow: hidden;
+    padding-inline: 5px;
+    border: 2px solid var(--clr-praimary);
+    user-select: none;
+}
+.icon{
+    display: inline-block;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.icon .aw{
+    line-height: 50px;
+}
+.icons-all span{
+    font-size: 15px;
+    line-height: 50px;
+    margin-left: 10px;
+}
+.social-media .icons-all:hover{
+    display: inline;
+    width: 110px;
+    color: var(--clr-praimary);
+    animation: revdoor 1s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px var(--clr-praimary);
+}
+
+@keyframes revdoor {
+    0%{
+        width: 50px;
+        box-shadow: 0 0 0px var(--clr-praimary);
+    }100%{
+        width: 120px;
+        box-shadow: 0 0 30px var(--clr-praimary);
+    }
+}
+
+@keyframes move {
+    from{
+        translate: 500px 0;
+    }
+    to{
+        
+        translate: 0px 0;
+    }
+}
+@keyframes light {
+    0%{
+        box-shadow: 0px 0px 10px var(--clr-praimary);
+    }
+    25%{
+        box-shadow: 0px 0px 0px var(--clr-praimary);
+    }
+    50%{
+        box-shadow: 0px 0px 10px var(--clr-praimary);
+    }
+    75%{
+        box-shadow: 0px 0px 0px var(--clr-praimary);
+    }
+    100%{
+        box-shadow: 0px 0px 10px var(--clr-praimary);
+    }
+}
+.logo{
+    position: relative;
+}
+.logo::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--clr-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: door 1s ease-out 0.7s 1;
+    animation-fill-mode: both;
+}
+
+h1{ 
+    -webkit-text-stroke: 2px #B7CCC9;
+    color: transparent;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    position: relative;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--clr-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: door 1s ease-out 1.2s 1;
+    animation-fill-mode: both;
+}
+h3{
+    position: relative;
+}
+h3::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--clr-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: door 1s ease-out 1.4s 1;
+    animation-fill-mode: both;
+}
+
+.social-media::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--clr-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: door 1s ease-out 1.6s 1;
+    animation-fill-mode: both;
+    border-radius: 5px;
+}
+.photo-out{
+    position: relative;
+    
+}
+.photo-out::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--clr-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: door 1s ease-in 2.2s 1;
+    animation-fill-mode: both;
+}
+
+@keyframes door {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0%;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+    .hero{
+        grid-template-columns: 1fr;
+        gap: 20px;
+        h1{
+            text-align: center;
+        }
+        .line{
+            rotate: 90deg;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}
