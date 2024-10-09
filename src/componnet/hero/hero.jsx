@@ -37,7 +37,7 @@ function Hero() {
           <a href="https://www.linkedin.com/in/mohammed-kamal-901041322/">
             <div className="icons-all">
               <div className="icon"><FontAwesomeIcon icon={faLinkedin} className="el aw" /></div>
-              <span>Email</span>
+              <span>Linkedin</span>
             </div>
           </a>
           <a href="mailto:mohammed.job.dev@gmail.com">

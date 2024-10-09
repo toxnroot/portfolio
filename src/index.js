@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Service from './pages/service/service'
-import Projects from './pages/projects/projects.jsx';
-import ContactUs from './pages/contact-us/contact-us.jsx';
+import Projects from './pages/projects/projects';
+import Skils from './pages/skils/skils';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import Hero from './componnet/hero/hero.jsx';
 
@@ -23,8 +23,8 @@ const router = createBrowserRouter([
     element: <App><Projects/></App>,
   }
   ,{
-    path: 'contact-us',
-    element: <App><ContactUs/></App>,
+    path: 'skills',
+    element: <App><Skils/></App>,
   }
 ]);
 
